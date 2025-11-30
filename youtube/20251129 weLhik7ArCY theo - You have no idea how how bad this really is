@@ -1,0 +1,42 @@
+TLDR: The 'Sha_hud' Storm: How a Sophisticated NPM Supply Chain Attack Exploited GitHub Actions
+
+*   The recent widespread NPM supply chain attack ("Sha_hud the second coming") critically leveraged a misunderstanding of GitHub Actions' `on pull_request_target` trigger, enabling arbitrary code execution from external pull requests on CI runners to steal highly privileged credentials (like GitHub PATs and NPM tokens) and subsequently compromise hundreds of packages and major vendors.
+
+---
+
+1.  **Sophisticated Multi-Stage Supply Chain Attack:** A widespread NPM supply chain attack ("Sha_hud the second coming") utilized malicious `pre-install` scripts to execute an obfuscated payload via the Bun runtime, compromising hundreds of packages and major vendors by exploiting CI/CD environments for credential harvesting, network hijacking, data exfiltration, and self-propagation.
+2.  **Critical CI/CD Vulnerability (GitHub Actions):** The attack's initial compromise was facilitated by exploiting misunderstandings of GitHub Actions' `on pull_request_target` trigger, allowing arbitrary code execution from external pull requests on CI runners, leading to the theft of critical secrets like GitHub PATs and NPM tokens.
+3.  **Urgent Security Implications & Actions:** This event highlights the severe fragility of software supply chains and CI/CD security, mandating immediate actions such as rotating all potentially compromised API keys, tokens, and passwords, rigorously securing CI/CD configurations (especially those handling external contributions), and migrating away from broad-access tokens and risky `pre-install`/`post-install` scripts.
+
+---
+
+*   **New NPM Supply Chain Attack (Sha_hud the second coming):**
+    *   **Attack Vector:** Malicious `pre-install` scripts (`setup_bun.js`) injected into `package.json` files of compromised NPM packages.
+    *   **Payload:** Executes an obfuscated `environment.js` script via the Bun runtime, running silently in the background during package installation.
+    *   **Compromised Targets:** Major vendors like Zapier, Async API, Postman, Post Hog, and ENS domains were affected via account takeovers and developer compromise. Over 834 packages and 700+ versions known to be hit.
+    *   **Malicious Actions:**
+        *   **Credential Harvesting:** Searches GitHub for campaign markers to activate. Decodes triple-B64-encoded GitHub access tokens.
+        *   **Environment Exploitation:** Detects CI/CD environments (GitHub Actions, Buildkite, CodeBuild), attempts `sudo` or Docker privilege escalation.
+        *   **Network Hijacking:** Manipulates DNS and `iptables` to create a man-in-the-middle, redirecting traffic (e.g., to malicious mirrors, blocking security scanners).
+        *   **Data Exfiltration:** Collects environment variables (cloud keys, API tokens), scans for hardcoded secrets (`truffle hog`), dumps cloud provider secrets (e.g., AWS Secrets Manager across regions), and sniffs GitHub Action secrets.
+        *   **Exfiltration Mechanism:** Creates public GitHub repositories on the victim's account using stolen tokens, uploading collected secrets as triple-B64 encoded JSON files (evades scanning).
+        *   **Worm-like Propagation:** Uses stolen NPM tokens to validate, fetch, inject malicious scripts, bump patch versions, and publish new malicious versions of *all* packages maintained by the compromised account.
+        *   **Data Wiping:** Self-destructs by deleting and overwriting files on Windows, Linux, and Mac systems.
+
+*   **Post Hog Compromise (Patient Zero Example):**
+    *   Post Hog was directly targeted, not just infected by a dependency.
+    *   **Initial Access:** Attacker stole a GitHub Personal Access Token (PAT) for a bot account. This was achieved by a "typo fix" Pull Request from an external contributor.
+    *   **Workflow Vulnerability:** A seemingly innocuous change to a GitHub Actions workflow trigger from `on pull_request` to `on pull_request_target` allowed external PRs to execute arbitrary code (from the PR) on Post Hog's CI runners.
+    *   **Escalation:** The stolen bot PAT (with broad repo write permissions) was then used to create a detached commit, directly modifying a lint workflow to exfiltrate *all* GitHub secrets (including NPM publishing tokens) from the CI environment.
+    *   **Concealment:** The attacker deleted workflow runs to hide their activity, making detection difficult.
+
+*   **Key Learnings & Recommended Actions:**
+    *   **Immediate Response:** Remove affected packages, delete `node_modules`, and *immediately rotate all API keys, tokens, and passwords* if secrets could have been exposed.
+    *   **CI/CD Security:**
+        *   Secure your CI/CD pipelines thoroughly. Understand how workflow triggers (e.g., `pull_request_target`) can lead to arbitrary code execution from external contributions.
+        *   GitHub CI workflows are complex; exercise extreme caution with changes.
+    *   **NPM Security:**
+        *   Be wary of `pre-install` and `post-install` scripts. Prefer package managers that disable them by default (e.g., PMPM10).
+        *   NPM is deprecating classic tokens; migrate to trusted publishing or granular access tokens.
+    *   **Monitoring & Tools:** Check GitHub for suspicious repositories using campaign markers (e.g., "Sha_hud the second coming"). Consider security tools like Socket to block malicious dependencies.
+    *   **General Principle:** The fragility lies not just with NPM or JavaScript, but with the inherent complexity and potential for code execution in CI environments, especially in open-source projects where external contributions are common.
