@@ -1,0 +1,181 @@
+- 00:00 - Introduction to AI in Coding Workflow
+- 00:49 - Disclaimers and Personal Biases
+- 01:42 - Sponsor: ArcJet - Securing LLM Endpoints
+- 03:54 - Starting a New Project: Autodraftify Concept
+- 05:02 - Initial Project Setup & Git Worktrees Explained
+- 07:55 - AI-Assisted Project Planning
+- 10:45 - Reviewing and Refining the AI-Generated Plan
+- 12:55 - Executing Plan with Parallel AI Models via Worktrees
+- 16:45 - Evaluating AI-Generated Code and CLI Execution
+- 19:25 - Comparing Essay Outputs and Dynamic Model Selection
+- 20:55 - Analyzing AI-Generated Review Feedback and Revisions
+- 23:40 - AI for Code Formatting and Refinement
+- 26:50 - Accepting AI Changes and GitHub Workflow Challenges
+- 30:57 - Leveraging AI for Automated Code Reviews (Code Rabbit &Greptile)
+- 34:40 - Strategies for Complex Tasks: Tightening the AI Feedback Loop
+- 39:00 - Advanced Prompt Engineering: Guardrails and Type Safety
+- 41:00 - Learning from AI Mistakes: Iterative Plan Adjustment
+- 42:30 - Debugging TypeScript Type Errors with AI Assistance
+- 43:50 - Optimizing AI Workflow: Smart Planning, Cheap Execution
+- 44:57 - Embrace Iteration: Code is Cheap, Plans are Key
+- 45:50 - Enhancing AI Context: Cloning Repositories and Examples
+- 47:05 - Key Elements for Successful AI-Powered Development
+- 48:20 - Integrated Editor vs. CLI for AI Workflows
+- 49:50 - "Fake it 'til you make it" Coding with AI
+- 50:50 - When to Code Manually vs. Use AI
+- 51:25 - Important Precept: Don't Use AI for Unknown Concepts
+- 52:25 - Cost-Effectiveness of AI Agents
+- 53:30 - Personal Experience with Cursor & Encouraging Experimentation
+- 54:00 - AI-Driven Communication Skills Improvement
+- 54:50 - Final Thoughts and Call to Action
+
+---
+
+00:00 - Introduction to AI in Coding Workflow
+The speaker describes how AI has revolutionized their coding workflow, leading to increased productivity and enjoyment in software development.
+
+00:49 - Disclaimers and Personal Biases
+The speaker clarifies that the tutorial is not about "vibe coding" and transparently addresses potential biases stemming from personal investments in the discussed technologies.
+
+01:42 - Sponsor: ArcJet - Securing LLM Endpoints
+ArcJet is featured as a sponsor, emphasizing its code-based solution for securing LLM-backed endpoints, particularly with rate limiting.
+
+03:54 - Starting a New Project: Autodraftify Concept
+The speaker initiates a new project called "Autodraftify" to showcase AI's capabilities in scaffolding, planning, and building, specifically for AI-drafting, reviewing, and revising essays.
+
+05:02 - Initial Project Setup & Git Worktrees Explained
+The process of manually initializing projects and utilizing Git worktrees for parallel development and experimentation is thoroughly explained.
+
+07:55 - AI-Assisted Project Planning
+The speaker details their approach to planning projects with AI, stressing the importance of verbal input for context and the iterative refinement of AI-generated plans.
+
+10:45 - Reviewing and Refining the AI-Generated Plan
+The significance of carefully reviewing, providing feedback on, and iteratively adjusting the AI-generated project plan is highlighted.
+
+12:55 - Executing Plan with Parallel AI Models via Worktrees
+The speaker demonstrates using Git worktrees to concurrently execute the project plan across multiple AI models (Composer, Opus, Gemini 3 Pro) for comparative analysis.
+
+16:45 - Evaluating AI-Generated Code and CLI Execution
+The AI-generated code is evaluated, the CLI is executed, and minor worktree-related issues are observed.
+
+19:25 - Comparing Essay Outputs and Dynamic Model Selection
+The essay outputs from different AI models are compared, and the speaker discusses dynamically selecting models based on their strengths for generating and reviewing content.
+
+20:55 - Analyzing AI-Generated Review Feedback and Revisions
+The AI-generated review feedback and subsequent revisions of the essay are meticulously examined, noting improvements in structure and coherence.
+
+23:40 - AI for Code Formatting and Refinement
+The speaker leverages AI to identify and correct formatting inconsistencies within the generated code, focusing specifically on string formatting.
+
+26:50 - Accepting AI Changes and GitHub Workflow Challenges
+The speaker accepts the AI-generated code, then navigates the complexities and manual efforts involved in pushing changes using the GitHub CLI.
+
+30:57 - Leveraging AI for Automated Code Reviews (Code Rabbit & Greptile)
+The speaker introduces and demonstrates the utility of AI tools such as Code Rabbit and Greptile for automating code reviews on pull requests.
+
+34:40 - Strategies for Complex Tasks: Tightening the AI Feedback Loop
+For complex projects, strategies are discussed to enhance AI model performance by implementing tighter feedback loops through basic tests, type checking, and precise guardrails.
+
+39:00 - Advanced Prompt Engineering: Guardrails and Type Safety
+The speaker elaborates on crafting prompts that incorporate explicit verification steps, type safety requirements, and robust guardrails to improve the quality of AI outputs.
+
+41:00 - Learning from AI Mistakes: Iterative Plan Adjustment
+The importance of learning from AI's errors is emphasized, advocating for iterative adjustments to the project plan or prompt rather than attempting to fix suboptimal generated code.
+
+42:30 - Debugging TypeScript Type Errors with AI Assistance
+A specific TypeScript type error is successfully debugged and resolved with the aid of an AI model, showcasing its practical application in troubleshooting.
+
+43:50 - Optimizing AI Workflow: Smart Planning, Cheap Execution
+The speaker advocates for an optimized AI workflow that employs smart, capable models for detailed planning and more affordable, faster models for implementation.
+
+44:57 - Embrace Iteration: Code is Cheap, Plans are Key
+The core principle that AI-generated code is inexpensive and disposable is highlighted, stressing that maintaining and refining the prompt or plan is paramount over fixing generated code.
+
+45:50 - Enhancing AI Context: Cloning Repositories and Examples
+Strategies for providing AI models with richer context, such as cloning relevant repositories and using existing tests as examples, are discussed to improve their comprehension and output quality.
+
+47:05 - Key Elements for Successful AI-Powered Development
+The fundamental components for effective AI-assisted development are summarized as a well-defined plan, reliable verification harnesses, and comprehensive context.
+
+48:20 - Integrated Editor vs. CLI for AI Workflows
+A comparison between integrated editor environments like Cursor and standalone CLI tools for AI workflows is presented, with a preference for the former due to superior integration and LSP support.
+
+49:50 - "Fake it 'til you make it" Coding with AI
+A creative coding methodology is introduced where the desired API functionality is initially written as if it already exists, and then AI is utilized to build the underlying implementation.
+
+50:50 - When to Code Manually vs. Use AI
+The speaker advises on recognizing when manual coding is a more efficient approach than persistent AI prompting for particularly challenging problems.
+
+51:25 - Important Precept: Don't Use AI for Unknown Concepts
+A crucial warning is given against employing AI to develop solutions for concepts that the user does not fully grasp themselves.
+
+52:25 - Cost-Effectiveness of AI Agents
+The speaker addresses the perceived high cost of AI agents by explaining how strategic model selection for different tasks can make the overall workflow surprisingly affordable.
+
+53:30 - Personal Experience with Cursor & Encouraging Experimentation
+The speaker shares positive personal experiences with Cursor and encourages others to experiment with various AI tools without pressure.
+
+54:00 - AI-Driven Communication Skills Improvement
+It is asserted that the process of interacting with AI agents, which necessitates clear instructions and feedback, significantly enhances one's communication abilities.
+
+54:50 - Final Thoughts and Call to Action
+The speaker concludes by advocating for the adoption of agentic workflows, highlighting the renewed enjoyment in coding, and inviting community feedback.
+
+---
+
+05:02 - Initial Project Setup & Git Worktrees Explained
+The process of manually initializing projects and utilizing Git worktrees for parallel development and experimentation.
+
+07:55 - AI-Assisted Project Planning
+Planning projects with AI, the importance of verbal input for context and the iterative refinement of AI-generated plans.
+
+10:45 - Reviewing and Refining the AI-Generated Plan
+The significance of carefully reviewing, providing feedback on, and iteratively adjusting the AI-generated project plan.
+
+12:55 - Executing Plan with Parallel AI Models via Worktrees
+Git worktrees to concurrently execute the project plan across multiple AI models (Composer, Opus, Gemini 3 Pro) for comparative analysis.
+
+30:57 - Leveraging AI for Automated Code Reviews (Code Rabbit & Greptile)
+The utility of AI tools such as Code Rabbit and Greptile for automating code reviews on pull requests.
+
+34:40 - Strategies for Complex Tasks: Tightening the AI Feedback Loop
+Strategies for complex projects: enhancing AI model performance by implementing tighter feedback loops through basic tests, type checking, and precise guardrails.
+
+39:00 - Advanced Prompt Engineering: Guardrails and Type Safety
+Crafting prompts with explicit verification steps, type safety requirements, and robust guardrails to improve AI output quality.
+
+41:00 - Learning from AI Mistakes: Iterative Plan Adjustment
+Learning from AI errors: iterative adjustments to the project plan or prompt, avoiding fixing suboptimal generated code.
+
+42:30 - Debugging TypeScript Type Errors with AI Assistance
+Debugging and resolving TypeScript type errors with AI assistance, demonstrating practical troubleshooting application.
+
+43:50 - Optimizing AI Workflow: Smart Planning, Cheap Execution
+Optimizing AI workflow: using smart models for detailed planning and affordable, faster models for implementation.
+
+44:57 - Embrace Iteration: Code is Cheap, Plans are Key
+Embracing iteration: AI-generated code is inexpensive and disposable; maintaining the prompt or plan is paramount.
+
+45:50 - Enhancing AI Context: Cloning Repositories and Examples
+Enhancing AI context: providing richer context by cloning relevant repositories and using existing tests as examples.
+
+47:05 - Key Elements for Successful AI-Powered Development
+Key elements for successful AI-powered development: a well-defined plan, reliable verification harnesses, and comprehensive context.
+
+49:50 - "Fake it 'til you make it" Coding with AI
+"Fake it 'til you make it" coding: writing desired API functionality first, then using AI to build the underlying implementation.
+
+50:50 - When to Code Manually vs. Use AI
+Deciding when manual coding is more efficient than persistent AI prompting for challenging problems.
+
+51:25 - Important Precept: Don't Use AI for Unknown Concepts
+Crucial warning: avoid using AI to develop solutions for concepts not fully grasped by the user.
+
+52:25 - Cost-Effectiveness of AI Agents
+Cost-effectiveness of AI agents: strategic model selection for different tasks makes the workflow surprisingly affordable.
+
+54:00 - AI-Driven Communication Skills Improvement
+AI-driven communication skills improvement: clear instructions and feedback to AI agents enhance communication abilities.
+
+---
+
